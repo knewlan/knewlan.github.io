@@ -10,6 +10,18 @@
             width: 90%;
         }
     </style>
+        <style>
+        .image-container {
+            width: 100%; /* Full width of the screen */
+            height: 400px; /* Example fixed height */
+            overflow: hidden; /* Ensures no overflow if the image is larger */
+        }
+        .image-container img {
+            width: 100%; /* Stretch image to fill the container width */
+            height: 100%; /* Stretch image to fill the container height */
+            object-fit: cover; /* Scale and crop to fill the container */
+        }
+    </style>
     <link rel="stylesheet" href="styles.css"> <!-- Optional CSS file -->
 </head>
 <body>
@@ -53,7 +65,9 @@
             For the Software Engineering and Design enhancement, I decided to convert the mobile application into a full-stack application using the MEAN stack.  Because the original work was done in Android Studio and the enhancement used the MEAN stack, there were several considerations to keep in mind, such as structure, functionality, and naming conventions.  
         </p>
         <ul>
-           <img src="CS499 Wireframe.png" alt="Enhancement One Wireframe">
+            <div class="image-container">
+               <img src="CS499 Wireframe.png" alt="Enhancement One Wireframe">
+            </div>
             
         </ul>
         <h3>Algorithms and Data Structures Enhancement</h3>
