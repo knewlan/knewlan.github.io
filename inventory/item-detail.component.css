@@ -1,0 +1,12 @@
+.item-detail-container {
+    padding: 20px;
+  display: flex;
+  justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+.item-detail-card {
+    max-width: 600px;
+  width: 100%;
+  padding: 20px;
+}

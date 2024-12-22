@@ -1,0 +1,41 @@
+<div class="inventory-list-container">
+    <div class="search-add-container">
+     <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Search items</mat-label>
+         <input matInput (keyup)="searchItems()" [(ngModel)]="searchTerm" placeholder="Search by name or UPC">
+         </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addItem()">Add Item</button>
+    </div>
+    
+    <table mat-table [dataSource]="dataSource" matSort class="inventory-table">
+     <ng-container matColumnDef="name">
+         <th mat-header-cell mat-sort-header> Name </th>
+          <td mat-cell> {{row.name}} </td>
+         </ng-container>
+     <ng-container matColumnDef="upc">
+     <th mat-header-cell mat-sort-header> UPC </th>
+       <td mat-cell> {{row.upc}} </td>
+        </ng-container>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell mat-sort-header> Quantity </th>
+          <td mat-cell> {{row.quantity}} </td>
+       </ng-container>
+         <ng-container matColumnDef="actions">
+         <th mat-header-cell> Actions </th>
+           <td mat-cell>
+            <button mat-icon-button color="primary" (click)="viewItemDetails(row._id)" matTooltip="View details">
+             <mat-icon>visibility</mat-icon>
+            </button>
+               <button mat-icon-button color="accent" (click)="editItem(row)" matTooltip="Edit">
+             <mat-icon>edit</mat-icon>
+             </button>
+              <button mat-icon-button color="warn" (click)="deleteItem(row)" matTooltip="Delete">
+              <mat-icon>delete</mat-icon>
+           </button>
+        </td>
+      </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       </table>
+     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of items"></mat-paginator>
+    </div>

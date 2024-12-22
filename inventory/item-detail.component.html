@@ -1,0 +1,14 @@
+*    `item-detail.component.html`
+
+```html
+<div *ngIf="item" class="item-detail-container">
+<mat-card class="item-detail-card">
+   <mat-card-title>{{ item.name }}</mat-card-title>
+  <mat-card-content>
+        <p><strong>UPC:</strong> {{ item.upc }}</p>
+        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+         <p><strong>Description:</strong> {{ item.description }}</p>
+  </mat-card-content>
+</mat-card>
+</div>
+<div *ngIf="!item">Loading...</div>
