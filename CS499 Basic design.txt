@@ -1,0 +1,23 @@
+inventory-app/
+├── client/         # Angular Frontend
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── auth/        # Login, Register
+│   │   │   ├── inventory/   # Inventory list, detail
+│   │   │   ├── services/    # API calls, auth handling
+│   │   │   ├── models/      # Data models
+│   │   │   ├── ...
+│   │   ├── index.html
+│   │   ├── ...
+│   ├── package.json
+│   └── ...
+├── server/         # Node.js/Express Backend
+│   ├── models/     # Mongoose Schemas
+│   ├── routes/     # API Routes
+│   ├── config/     # Database config
+│   ├── app.js      # Main server file
+│   ├── package.json
+│   └── ...
+├── .gitignore
+├── package.json   # Root package
+└── README.md
